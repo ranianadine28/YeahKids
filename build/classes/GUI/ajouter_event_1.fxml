@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ajouteventpane" prefHeight="706.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEvent1Controller">
+           <stylesheets>
+        <URL value="@Stylesheet.css" />
+    </stylesheets>
+         <children>
+            <TextField fx:id="titree" layoutX="445.0" layoutY="67.0" prefHeight="39.0" prefWidth="230.0" />
+            <Label layoutX="336.0" layoutY="69.0" prefHeight="39.0" prefWidth="76.0" text="Titre :">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <DatePicker fx:id="dateEvenement" layoutX="446.0" layoutY="117.0" onAction="#setdatedebut" prefHeight="30.0" prefWidth="230.0" />
+            <TextArea fx:id="descriptionn" layoutX="446.0" layoutY="386.0" prefHeight="120.0" prefWidth="230.0" />
+            <JFXButton fx:id="Image" buttonType="RAISED" layoutX="466.0" layoutY="198.0" onAction="#UploadImage" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #ff4f00;" text="Image" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="414.0" layoutY="517.0" onAction="#ajouter" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #ff4f00;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXButton>
+            <Label fx:id="alertetitre" layoutX="698.0" layoutY="79.0" prefHeight="17.0" prefWidth="120.0" text="choisir un titre SVP!!" textFill="#eb0909" visible="false">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
+            <Label fx:id="alertetypeevent" layoutX="719.0" layoutY="246.0" text="choisir un type SVP!!" textFill="#eb0909" visible="false" />
+            <Label fx:id="alertedescription" layoutX="696.0" layoutY="391.0" text="choisir un descriptionSVP!!" textFill="#eb0909" visible="false" />
+            <Label fx:id="alertedatedebut" layoutX="698.0" layoutY="125.0" text="choisir une date  debut  SVP!!" textFill="#eb0909" visible="false" />
+      <JFXButton fx:id="retour" buttonType="RAISED" layoutX="-56.0" layoutY="-44.0" onAction="#retourclicked" prefHeight="46.0" prefWidth="104.0" ripplerFill="BLACK" style="-fx-background-color: #ff4f00;" text="Retour" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="323.0" layoutY="113.0" prefHeight="39.0" prefWidth="156.0" text="Date début :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="337.0" layoutY="196.0" prefHeight="39.0" prefWidth="76.0" text="Image :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="337.0" layoutY="233.0" prefHeight="39.0" prefWidth="64.0" text="Type :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="323.0" layoutY="384.0" prefHeight="39.0" prefWidth="120.0" text="Description :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="344.0" layoutY="24.0" prefHeight="39.0" prefWidth="271.0" text="Ajout d'un événement" textAlignment="CENTER" textFill="#ff4f00">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datefinn" layoutX="446.0" layoutY="159.0" prefHeight="30.0" prefWidth="230.0" />
+      <Label layoutX="330.0" layoutY="153.0" prefHeight="39.0" prefWidth="156.0" text="Date fin :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="adr" layoutX="445.0" layoutY="316.0" prefHeight="30.0" prefWidth="230.0" />
+      <Label layoutX="338.0" layoutY="311.0" prefHeight="39.0" prefWidth="64.0" text="Lieu :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prixx" layoutX="445.0" layoutY="352.0" onAction="#numeriquePrix" prefHeight="30.0" prefWidth="230.0" />
+      <Label layoutX="339.0" layoutY="347.0" prefHeight="39.0" prefWidth="64.0" text="Prix :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nbreplace" accessibleRole="CHECK_BOX" layoutX="444.0" layoutY="275.0" onAction="#numerique" prefHeight="30.0" prefWidth="230.0" />
+      <Label layoutX="327.0" layoutY="268.0" prefHeight="39.0" prefWidth="116.0" text="Nbre places :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="alertedatefin" layoutX="707.0" layoutY="168.0" text="choisir une date fin  SVP!!" textFill="#ee0303" visible="false" />
+      <Label fx:id="alertenbreplace" layoutX="683.0" layoutY="299.0" text="choisir  le nombre de places SVP!!" textFill="#ee1717" visible="false" />
+      <Label fx:id="alertelieu" layoutX="704.0" layoutY="323.0" text="choisir  le lieu  SVP!!" textFill="#ee1717" visible="false" />
+      <Label fx:id="alerteprix" layoutX="685.0" layoutY="372.0" text="choisir  le prix SVP!!" textFill="#ee1717" visible="false" />
+      <JFXButton buttonType="RAISED" layoutX="607.0" layoutY="517.0" onAction="#annuler" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #ff4f00;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <RadioButton fx:id="culturelle" layoutX="446.0" layoutY="244.0" mnemonicParsing="false" onAction="#changedCulture" text="Culturelle" />
+      <RadioButton fx:id="aventure" layoutX="623.0" layoutY="246.0" mnemonicParsing="false" onAction="#changedAventure" text="Aventure" />
+      <RadioButton fx:id="sport" layoutX="543.0" layoutY="246.0" mnemonicParsing="false" onAction="#changedSport" text="Sport" />
+      <Label fx:id="alerteprixennombre" layoutX="685.0" layoutY="373.0" text="choisir  un nombre SVP!!" textFill="#ee1717" visible="false" />
+      <Label fx:id="alertenbreplacennombre1" layoutX="669.0" layoutY="300.0" text="choisir  un nombre SVP!!" textFill="#ee1717" visible="false" />
+         </children>
+      </AnchorPane>
