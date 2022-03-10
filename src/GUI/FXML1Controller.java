@@ -9,6 +9,7 @@ import Entities.JardinEnfant;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
@@ -27,8 +28,12 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -43,6 +48,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import org.controlsfx.control.Notifications;
 import services.ServiceJardinEnfant;
 import utils.MyDB;
@@ -100,13 +106,18 @@ public class FXML1Controller implements Initializable {
     private TableColumn<JardinEnfant, Float> prix;
     @FXML
     private TableColumn<JardinEnfant, Integer> telephone;
-@FXML
-        ImageView imageview;
+    ImageView imageview;
     Connection cnx;
     @FXML
     private Circle Button_Clear_Jardin_Enfant;
     @FXML
     private TextField TextField_Recherche_jardin_enfant;
+    @FXML
+    private ImageView image_Logo;
+    @FXML
+    private Button Button_inserer_logo;
+    @FXML
+    private Button button_backtomenu1;
 
     /**
      * Initializes the controller class.
@@ -546,6 +557,7 @@ Notificationmanager(1);
         DatePicker_date_creation.getEditor().setText("");
         TextField_prix.setText("");
         TextField_telephone.setText("");
+        TextField_logo.setText("");
 
     }
     
@@ -564,6 +576,11 @@ Notificationmanager(1);
         TextField_nom3.setText(JardinEnfant.getNom());
         TextField_description.setText(JardinEnfant.getDescription());
         TextField_logo.setText(String.valueOf(JardinEnfant.getLogo()));
+         String picture = "file:" + JardinEnfant.getLogo();
+
+        Image image = new Image(picture, 110, 110, false, true);
+
+        image_Logo.setImage(image);
         TextField_nb_employes.setText(String.valueOf(JardinEnfant.getNb_employes()));
         TextField_adresse.setText(String.valueOf(JardinEnfant.getAdresse()));
         DatePicker_date_creation.getEditor().setText(String.valueOf(JardinEnfant.getDate_creation()));
@@ -573,7 +590,6 @@ Notificationmanager(1);
     }
 
 
- @FXML 
 private void selectfile(ActionEvent event) throws FileNotFoundException {
  FileChooser fc = new FileChooser();
  FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("IMG files (*.jpg)", "*.jpg");
@@ -593,6 +609,48 @@ private void selectfile(ActionEvent event) throws FileNotFoundException {
  
  }
 }
-    
+    @FXML
+    public void insertImage() {
+
+        FileChooser open = new FileChooser();
+
+        Stage stage = (Stage) AnchorPane_jardin_enfant.getScene().getWindow();
+
+        File file = open.showOpenDialog(stage);
+
+        if (file != null) {
+
+            String path = file.getAbsolutePath();
+
+            path = path.replace("\\", "\\\\");
+
+            TextField_logo.setText(path);
+
+            Image image = new Image(file.toURI().toString(), 110, 110, false, true);
+
+            image_Logo.setImage(image);
+
+        } else {
+
+            System.out.println("NO DATA EXIST!");
+
+        }
+    }
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    @FXML
+    private void backtomenu1(ActionEvent event) {
+        try {
+           
+            root = FXMLLoader.load(getClass().getResource("../GUI/BarreDesMenus.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+        }
+        
+    }
 
 }

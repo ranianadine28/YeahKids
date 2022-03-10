@@ -6,6 +6,7 @@
 package GUI;
 
 import Entities.Eleve;
+import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.sql.Connection;
@@ -23,8 +24,12 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -34,6 +39,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import org.controlsfx.control.Notifications;
 import javafx.util.Duration;
 import javax.mail.Message;
@@ -93,6 +99,8 @@ public class FXMLController implements Initializable {
     private TextField TextField_Recherche_eleve;
     @FXML
     private Circle Button_Clear_Eleve;
+    @FXML
+    private Button button_backtomenu1;
 
     /**
      * Initializes the controller class.
@@ -474,6 +482,23 @@ Notificationmanager(1);
         TextField_idp.setText(String.valueOf(eleve.getIdp()));
         TextField_idj.setText(String.valueOf(eleve.getIdj()));
 
+    }
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    @FXML
+    private void backtomenu1(ActionEvent event) {
+        
+        
+        try {
+           
+            root = FXMLLoader.load(getClass().getResource("../GUI/BarreDesMenus.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+        }
     }
 
    

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BarreDesMenusController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1049.0" layoutX="231.0">
+         <image>
+            <Image url="@../images/images.jpg" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="720.0" prefWidth="230.0" style="-fx-background-color: white;">
+         <children>
+            <ButtonBar layoutX="24.0" layoutY="217.0" prefHeight="40.0" prefWidth="200.0" />
+            <ImageView fitHeight="200.0" fitWidth="249.0" layoutX="1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/png-transparent-child-保活-いらすとや-jardin-d-enfants-child.png" />
+               </image>
+            </ImageView>
+            <Button layoutY="273.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="230.0" style="-fx-background-radius: 50; -fx-background-color: GREEN;" text="Gestion Admin&amp;User" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutY="339.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="230.0" style="-fx-background-radius: 50; -fx-background-color: green;" text="Gestion jardin&amp;eleve" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutY="405.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="230.0" style="-fx-background-radius: 50; -fx-background-color: green;" text="Gestion Shop" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutY="471.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="230.0" style="-fx-background-radius: 50; -fx-background-color: green;" text="Gestion xxxxx" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutY="537.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="230.0" style="-fx-background-radius: 50; -fx-background-color: green;" text="Gestion xxxxx" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ButtonBar layoutX="24.0" layoutY="217.0" prefHeight="40.0" prefWidth="200.0" />
+      <Button fx:id="Button_Gestion_JardinE" layoutX="422.0" layoutY="201.0" mnemonicParsing="false" onMousePressed="#Gestion_JardinE" prefHeight="153.0" prefWidth="668.0" style="-fx-background-radius: 100; -fx-background-color: yellow;" text="Gestion Jardin Enfant">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Button>
+      <Button fx:id="Button_Gestion_EleveJ" layoutX="422.0" layoutY="401.0" mnemonicParsing="false" onMousePressed="#Gestion_EleveJ" prefHeight="153.0" prefWidth="668.0" style="-fx-background-radius: 100; -fx-background-color: yellow;" text="Gestion Eleve">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
