@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane_jardin_enfant" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: C8C4C4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXML1Controller">
+   <children>
+      <TextField fx:id="TextField_description" layoutX="167.0" layoutY="242.0" />
+      <TextField fx:id="TextField_logo" layoutX="167.0" layoutY="287.0" />
+      <TextField fx:id="TextField_nb_employes" layoutX="167.0" layoutY="335.0" />
+      <TextField fx:id="TextField_adresse" layoutX="167.0" layoutY="386.0" />
+      <TextField fx:id="TextField_prix" layoutX="167.0" layoutY="485.0" />
+      <Label layoutX="66.0" layoutY="241.0" text="description">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="484.0" text="prix">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="437.0" text="date_creation">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="385.0" text="adresse">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="286.0" text="logo">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="334.0" text="nb_employes">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="Ajouter_jardin" layoutX="140.0" layoutY="608.0" mnemonicParsing="false" onAction="#Ajouter_jardin" style="-fx-background-color: B6C45D;" text="ajouter">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="Supprimer_jardin" layoutX="334.0" layoutY="609.0" mnemonicParsing="false" onAction="#Supprimer_jardin" style="-fx-background-color: B6C45D;" text="supprimer">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="Modifier_jardin" layoutX="232.0" layoutY="609.0" mnemonicParsing="false" onAction="#Modifier_jardin" style="-fx-background-color: B6C45D;" text="modifier">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <TableView fx:id="Affichage_Jardin_Enfant" layoutX="373.0" layoutY="182.0" onMouseClicked="#selectJardinEnfant" onSort="#Affichage_Jardin_Enfant" prefHeight="332.0" prefWidth="801.0" style="-fx-background-color: grey;">
+         <columns>
+            <TableColumn fx:id="idj" prefWidth="75.0" text="idj" />
+            <TableColumn fx:id="nom" prefWidth="75.0" text="nom" />
+            <TableColumn fx:id="description" prefWidth="75.0" text="description" />
+            <TableColumn fx:id="logo" prefWidth="75.0" text="logo" />
+            <TableColumn fx:id="nb_employes" prefWidth="99.0" text="nb_employes" />
+            <TableColumn fx:id="adresse" prefWidth="86.0" text="adresse" />
+            <TableColumn fx:id="date_creation" minWidth="0.0" prefWidth="115.0" text="date_creation" />
+            <TableColumn fx:id="prix" prefWidth="75.0" text="prix" />
+            <TableColumn fx:id="telephone" prefWidth="75.0" text="telephone" />
+         </columns>
+      </TableView>
+      <TextField fx:id="TextField_telephone" layoutX="167.0" layoutY="525.0" />
+      <Label layoutX="62.0" layoutY="524.0" text="telephone">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="156.0" opacity="0.0" text="idj">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TextField_nom3" layoutX="167.0" layoutY="198.0" />
+      <Label layoutX="120.0" layoutY="197.0" text="nom">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#18967c" fontSmoothingType="LCD" layoutX="126.0" layoutY="26.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Jardin Enfant" textAlignment="CENTER" textOrigin="TOP" AnchorPane.rightAnchor="936.1865234375">
+         <font>
+            <Font name="Arial Nova Cond Bold" size="39.0" />
+         </font>
+      </Text>
+      <TextField fx:id="TextField_idj31" layoutX="167.0" layoutY="157.0" opacity="0.0" />
+      <DatePicker fx:id="DatePicker_date_creation" layoutX="167.0" layoutY="439.0" />
+      <Circle fx:id="Button_Clear_Jardin_Enfant" layoutX="562.0" layoutY="597.0" onMouseClicked="#clear" radius="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#9a6464" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Circle>
+      <TextField fx:id="TextField_Recherche_jardin_enfant" layoutX="479.0" layoutY="107.0" promptText="Recherche" />
+      <Button fx:id="select" layoutX="317.0" layoutY="287.0" mnemonicParsing="false" onAction="#selectfile" text="select" />
+   </children>
+</AnchorPane>
