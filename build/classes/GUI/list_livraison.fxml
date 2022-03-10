@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.List_livraisonController">
+   <children>
+      <TableView fx:id="tableview" layoutX="21.0" layoutY="70.0" prefHeight="200.0" prefWidth="560.0">
+        <columns>
+          <TableColumn fx:id="id_produit" prefWidth="175.0" text="id_produit" />
+          <TableColumn fx:id="prix" prefWidth="175.0" text="prix" />
+          <TableColumn fx:id="quantite" prefWidth="204.0" text="quantite" />
+          <TableColumn fx:id="id_parent" prefWidth="175.0" text="id_parent" />
+          <TableColumn fx:id="adresse" prefWidth="175.0" text="adresse" />
+        </columns>
+      </TableView>
+   </children> 
+</AnchorPane>

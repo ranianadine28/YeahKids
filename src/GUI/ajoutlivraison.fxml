@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutlivraisonController">
+      <children>
+      <Label fx:id="welcome" layoutX="111.0" layoutY="58.0" prefHeight="17.0" prefWidth="105.0" text="id_produit" />
+      <TextField fx:id="id_produit" layoutX="226.0" layoutY="54.0" promptText="id_produit" />
+      <TextField fx:id="prix" layoutX="226.0" layoutY="100.0" promptText="prix" />
+      <TextField fx:id="quantite" layoutX="226.0" layoutY="147.0" promptText="quantite" />
+       <TextField fx:id="adresse" layoutX="226.0" layoutY="252.0" promptText="adresse" />
+        <TextField fx:id="id_parent" layoutX="226.0" layoutY="197.0" promptText="id_parent" />
+      <Button layoutX="312.0" layoutY="347.0" mnemonicParsing="false" onAction="#Insert" text="Insérer" />
+      <Button layoutX="226.0" layoutY="347.0" mnemonicParsing="false" onAction="#Affichage" text="Afficher" />
+      <Label fx:id="welcome11" layoutX="111.0" layoutY="104.0" prefHeight="17.0" prefWidth="105.0" text="Prix" />
+      <Label fx:id="welcome111" layoutX="111.0" layoutY="151.0" prefHeight="17.0" prefWidth="105.0" text="Quantite" />
+            <Label fx:id="welcome1111" layoutX="111.0" layoutY="256.0" prefHeight="17.0" prefWidth="105.0" text="Adresse" />
+      <Label fx:id="welcome11111" layoutX="111.0" layoutY="201.0" prefHeight="17.0" prefWidth="105.0" text="Id_parent" />
+
+   </children>
+</AnchorPane>
