@@ -11,11 +11,17 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import services.ServiceJardinEnfant;
 
 /**
@@ -31,6 +37,8 @@ public class Front_Jardin_EnfantController implements Initializable {
     private GridPane grid;
     private final List<JardinEnfant> jardinEnfant = new ArrayList<>();
     ServiceJardinEnfant sJE = new ServiceJardinEnfant();
+    @FXML
+    private Button button_backtomenu1;
 
     /**
      * Initializes the controller class.
@@ -63,5 +71,21 @@ public class Front_Jardin_EnfantController implements Initializable {
             ex.printStackTrace();
         }
     }    
-    
+
+     private Stage stage;
+    private Scene scene;
+    private Parent root;
+    @FXML
+        private void backtomenu1(ActionEvent event) {
+        try {
+           
+            root = FXMLLoader.load(getClass().getResource("../GUI/BarreDesMenus.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+        }
+        
+    }
 }

@@ -6,6 +6,7 @@
 package GUI;
 
 import Entities.Eleve;
+import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.sql.Connection;
@@ -15,11 +16,16 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -47,6 +53,7 @@ public class Front_EleveFXMLController implements Initializable {
     private TextField TextField_idp;
     @FXML
     private Button Ajouter_eleve1;
+     
 
     private Connection cnx;
     private PreparedStatement prepare;
@@ -146,4 +153,6 @@ public class Front_EleveFXMLController implements Initializable {
 }  
            
     }
+        
+
 }
