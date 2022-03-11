@@ -37,8 +37,6 @@ public class Front_Jardin_EnfantController implements Initializable {
     private GridPane grid;
     private final List<JardinEnfant> jardinEnfant = new ArrayList<>();
     ServiceJardinEnfant sJE = new ServiceJardinEnfant();
-    @FXML
-    private Button button_backtomenu1;
 
     /**
      * Initializes the controller class.
@@ -72,20 +70,7 @@ public class Front_Jardin_EnfantController implements Initializable {
         }
     }    
 
-     private Stage stage;
-    private Scene scene;
-    private Parent root;
-    @FXML
-        private void backtomenu1(ActionEvent event) {
-        try {
-           
-            root = FXMLLoader.load(getClass().getResource("../GUI/BarreDesMenus.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-        }
+     
         
-    }
+    
 }
