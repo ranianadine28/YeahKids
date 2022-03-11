@@ -5,27 +5,25 @@
  */
 package test;
 
-import Entities.Eleve;
-import java.sql.Date;
-import services.*;
-import utils.MyDB;
-import java.time.LocalDate;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import entites.*;
+import Service.*;
+import utils.DB;
+import Service.SendMailSSL;
 /**
  *
- * @author lotfi
+ * @author fedi
  */
 public class Main {
     
-    public static void main(String[] args) {
-     
-      
-               ServiceEleve sp = new ServiceEleve();
-        Eleve p = new Eleve(10, "nomdqsdqs", "d", 12, 233, 43);
-        //sp.ajouter(p);
-          sp.supprimer(10);
-          //sp.modifier(p);
-        
-        System.out.println(sp.afficher());
-    }
+    public static void main(String[] args) {    
+     //from,password,to,subject,message  
+     SendMailSSL.send("pivdev04@gmail.com","Yeahkid_10","fadihaboubi8@gmail.com","hello javatpoint","How r u?");  
+     //change from, password and to  1
+ }   
     
 }
